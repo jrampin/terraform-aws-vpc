@@ -2,6 +2,24 @@
 
 Terraform module which creates VPC resources on AWS.
 
+## Usage
+
+```hcl
+
+module "network" {
+  source          = "../"
+
+  aws_account_id  = "123456"
+  project_name    = "demo"
+  environment     = "dev"
+  aws_region      = "ap-southeast-2"
+  cidr_network    = "10.0.0.0/16"
+  azs             = ["ap-southeast-2a", "ap-southeast-2c"]
+  public_subnets  = ["10.0.0.0/20", "10.0.16.0/20"]
+  private_subnets = ["10.0.48.0/20", "10.0.64.0/20"]
+}
+```
+
 ## Requirements
 
 | Name | Version |

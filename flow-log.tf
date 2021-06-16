@@ -10,14 +10,14 @@ resource "aws_s3_bucket" "vpc_logs" {
   acl    = "log-delivery-write"
 
   versioning {
-    enabled = true
+    enabled    = true
     mfa_delete = false # TODO The CICD pipeline then requires MFA if enabled
   }
 
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
-        sse_algorithm     = "AES256"
+        sse_algorithm = "AES256"
       }
     }
   }

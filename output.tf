@@ -15,5 +15,5 @@ output "public_subnets" {
 
 output "s3_bucket_logs" {
   description = "S3 Bucket for VPC logs"
-  value = aws_s3_bucket.vpc_logs
+  value       = aws_s3_bucket.vpc_logs
 }
